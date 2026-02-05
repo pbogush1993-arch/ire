@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Investigative Reporters and Editors (IRE) — Home</title>
+  <title>Investigative Reporters and Editors (IRE) — Modern Mirror</title>
   <style>
     :root {
-      --primary: #003366;      /* тёмно-синий акцент */
-      --text: #333;
-      --light: #f8f9fa;
-      --gray: #666;
+      --primary: #003366; /* Deep blue for trust and authority */
+      --secondary: #b22222; /* Red accent for urgency in investigations */
+      --text: #2c3e50; /* Dark gray for readability */
+      --light: #f4f7fa; /* Light background */
+      --gray: #7f8c8d; /* Neutral gray */
+      --shadow: rgba(0, 0, 0, 0.1);
     }
 
     * {
@@ -19,192 +21,254 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Roboto', sans-serif;
       line-height: 1.6;
       color: var(--text);
       background: #fff;
+      scroll-behavior: smooth;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
     header {
-      background: var(--primary);
+      background: linear-gradient(to bottom, var(--primary), #001f3f);
       color: white;
-      padding: 1.5rem 0;
+      padding: 3rem 0;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWRhc2hhcnJheT0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEwMC4wMDAwMDAsIC0xMDAuMDAwMDAwKSIgZmlsbD0iI0ZGRkZGRiI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMDAuMDAwMDAwLDEwMC4wMDAwMDBMMTIwLjAwMDAwMCwxMDAuMDAwMDAwTDEyMC4wMDAwMDAsMTIwLjAwMDAwMEwxMDAuMDAwMDAwLDEyMC4wMDAwMDBaIiBpZD0iUGF0aCIgb3BhY2l0eT0iMC4wNSI+PC9wYXRoPgogICAgICAgICAgICA8cGF0aCBkPSJNMTIwLjAwMDAwMCwxMDAuMDAwMDAwTDE0MC4wMDAwMDAsMTAwLjAwMDAwMEwxNDAuMDAwMDAwLDEyMC4wMDAwMDBMMTEwLjAwMDAwMCwxMjAuMDAwMDAwWiIgaWQ9IlBhdGgiIG9wYWNpdHk9IjAuMDUiPjwvcGF0aD4KICAgICAgICAgICAgPHBhdGggZD0iTTEwMC4wMDAwMDAsMTAwLjAwMDAwMEwxMjAuMDAwMDAwLDEwMC4wMDAwMDBMMTIwLjAwMDAwMCwxMjAuMDAwMDAwTDEwMC4wMDAwMDAsMTIwLjAwMDAwMFoiIGlkPSJQYXRoIiBvcGFjaXR5PSIwLjA1Ij48L3BhdGg+ICAgICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+') repeat; /* Subtle investigative pattern (magnifying glass abstract) */
+      opacity: 0.05;
     }
 
     header h1 {
-      font-size: 2.4rem;
+      font-size: 3rem;
       margin-bottom: 0.5rem;
+      animation: fadeIn 1s ease-in;
     }
 
     header p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       max-width: 800px;
       margin: 0 auto;
     }
 
     nav {
-      background: #222;
+      background: rgba(0, 0, 0, 0.8);
       color: white;
-      padding: 1rem 0;
-      text-align: center;
+      padding: 1.2rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 10px var(--shadow);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     nav a {
       color: white;
-      margin: 0 1.2rem;
+      margin: 0 1.5rem;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: var(--secondary);
     }
 
     .hero {
       background: var(--light);
-      padding: 4rem 0 3rem;
+      padding: 5rem 0;
       text-align: center;
+      position: relative;
     }
 
     .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1.2rem;
+      font-size: 3.5rem;
       color: var(--primary);
+      margin-bottom: 1.5rem;
+      animation: slideUp 1s ease;
     }
 
     .hero p {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       max-width: 900px;
-      margin: 0 auto 2rem;
+      margin: 0 auto 2.5rem;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards 0.5s;
     }
 
     section {
-      padding: 3rem 0;
+      padding: 4rem 0;
+      border-bottom: 1px solid #eee;
     }
 
     section h2 {
-      font-size: 2.1rem;
+      font-size: 2.5rem;
       color: var(--primary);
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       text-align: center;
+      position: relative;
     }
 
-    .events-grid, .news-grid {
-      display: grid;
-      gap: 1.8rem;
-    }
-
-    .event, .news-item {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    .event strong {
+    section h2::after {
+      content: '';
       display: block;
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      color: #222;
+      width: 60px;
+      height: 3px;
+      background: var(--secondary);
+      margin: 1rem auto 0;
     }
 
-    .event .date {
-      color: var(--gray);
-      font-size: 0.95rem;
-      margin-bottom: 0.6rem;
+    /* Slider for Events and News */
+    .slider {
+      position: relative;
+      overflow: hidden;
+      max-width: 100%;
+      margin: 0 auto;
     }
 
-    .news-item h3 {
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 1rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px var(--shadow);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .slide:hover {
+      transform: scale(1.02);
+    }
+
+    .slide strong, .slide h3 {
+      color: var(--primary);
       font-size: 1.4rem;
-      margin-bottom: 0.6rem;
     }
 
-    .news-item .date {
+    .slide .date {
       color: var(--gray);
-      font-size: 0.9rem;
-      margin-bottom: 0.8rem;
+      font-style: italic;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      cursor: pointer;
+      z-index: 5;
+      font-size: 1.5rem;
+      border-radius: 50%;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
     }
 
     .cta {
-      background: var(--primary);
+      background: linear-gradient(to right, var(--primary), var(--secondary));
       color: white;
       text-align: center;
-      padding: 3rem 1rem;
-      margin: 2rem 0;
+      padding: 4rem 0;
+      margin: 3rem 0;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px var(--shadow);
     }
 
     .cta h2 {
       color: white;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
     .cta p {
       max-width: 700px;
-      margin: 0 auto 1.5rem;
-      font-size: 1.1rem;
+      margin: 0 auto 2rem;
+      font-size: 1.2rem;
     }
 
     .btn {
       display: inline-block;
       background: white;
       color: var(--primary);
-      padding: 0.9rem 2rem;
-      border-radius: 6px;
+      padding: 1rem 2.5rem;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      transition: all 0.25s;
+      transition: all 0.3s;
+      box-shadow: 0 3px 10px var(--shadow);
     }
 
     .btn:hover {
-      background: #f0f0f0;
-      transform: translateY(-2px);
+      background: var(--light);
+      color: var(--secondary);
+      transform: translateY(-3px);
     }
 
     footer {
-      background: #111;
-      color: #ccc;
+      background: #0f172a;
+      color: #cbd5e1;
       text-align: center;
-      padding: 2rem 0;
-      font-size: 0.95rem;
+      padding: 2.5rem 0;
+      font-size: 1rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     /* Responsive */
-    @media (min-width: 768px) {
-      .events-grid, .news-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      header h1 { font-size: 3rem; }
-      .hero h1  { font-size: 3.4rem; }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.5rem; }
+      .hero h1 { font-size: 2.8rem; }
+      nav .container { flex-direction: column; }
+      .slide { padding: 1rem; }
     }
 
     @media (min-width: 1024px) {
-      .events-grid, .news-grid {
-        grid-template-columns: repeat(3, 1fr);
+      .slides { 
+        width: calc(33.33% * var(--num-slides)); /* For 3 slides visible */
       }
-    }
-
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 0.8rem 0;
-      }
-
-      .hero {
-        padding: 3rem 1rem;
-      }
-
-      .hero h1 {
-        font-size: 2.2rem;
-      }
+      .slide { min-width: 33.33%; }
     }
   </style>
 </head>
@@ -213,7 +277,7 @@
   <header>
     <div class="container">
       <h1>Investigative Reporters and Editors</h1>
-      <p>Supporting investigative journalism worldwide since 1975</p>
+      <p>Empowering global investigative journalism since 1975 – Uncovering truths, sharing insights, driving change.</p>
     </div>
   </header>
 
@@ -230,115 +294,154 @@
 
   <section class="hero" id="home">
     <div class="container">
-      <h1>Welcome to IRE!</h1>
-      <p>Investigative Reporters and Editors Inc. is a grassroots nonprofit organization dedicated to improving the quality of investigative reporting.</p>
-      <p>IRE was formed to create a forum in which journalists throughout the world could help each other by sharing story ideas, newsgathering techniques and news sources.</p>
-      <p>IRE provides members access to thousands of reporting tipsheets and other materials through its Resource Center and hosts conferences and specialized training across the country. Programs of IRE include the National Institute for Computer-Assisted Reporting (NICAR), a collaboration between IRE and the Missouri School of Journalism.</p>
+      <h1>Welcome to IRE: The Hub of Investigative Excellence</h1>
+      <p>Investigative Reporters and Editors Inc. stands as a beacon for journalists worldwide, fostering a community dedicated to exposing hidden truths and enhancing reporting standards.</p>
+      <p>Founded to unite journalists in sharing innovative techniques and sources, IRE offers unparalleled resources, from in-depth tipsheets to cutting-edge data analysis tools.</p>
+      <p>Through partnerships like the National Institute for Computer-Assisted Reporting (NICAR), IRE equips reporters with the skills to tackle complex stories in today's digital age.</p>
     </div>
   </section>
 
   <section id="events">
     <div class="container">
-      <h2>Upcoming events</h2>
-      <div class="events-grid">
-        <div class="event">
-          <strong>Feb 11</strong>
-          <div class="date">Online</div>
-          IRE President/Executive Director Office Hours: NICAR and other 2026 Events
+      <h2>Upcoming Investigative Events & Workshops</h2>
+      <p class="intro">Dive into our dynamic calendar of events designed to sharpen your investigative skills and connect with industry leaders.</p>
+      <div class="slider" id="events-slider">
+        <button class="slider-btn prev" onclick="moveSlide('events', -1)">&#10094;</button>
+        <div class="slides">
+          <div class="slide event">
+            <strong>Feb 11: Office Hours</strong>
+            <div class="date">Online</div>
+            <p>Join IRE leaders for discussions on NICAR and 2026 events – perfect for networking and insights.</p>
+          </div>
+          <div class="slide event">
+            <strong>Feb 12: Indigenous Workshop</strong>
+            <div class="date">Online / TBD</div>
+            <p>Empowering indigenous voices in journalism through specialized training and storytelling techniques.</p>
+          </div>
+          <div class="slide event">
+            <strong>Feb 13: Board Meeting</strong>
+            <div class="date">Online</div>
+            <p>Open to members: Discuss IRE's future directions and initiatives in investigative reporting.</p>
+          </div>
+          <div class="slide event">
+            <strong>Mar 5–8: NICAR Conference</strong>
+            <div class="date">Indianapolis, IN</div>
+            <p>Explore data journalism frontiers with hands-on sessions and expert panels.</p>
+          </div>
+          <div class="slide event">
+            <strong>Mar 23: Data Bootcamp</strong>
+            <div class="date">Columbia, MO</div>
+            <p>Master Sheets and AI tools for efficient investigative data handling.</p>
+          </div>
+          <div class="slide event">
+            <strong>Jun 18–21: IRE Conference</strong>
+            <div class="date">Oxon Hill, MD</div>
+            <p>Annual gathering for in-depth training, networking, and award celebrations.</p>
+          </div>
         </div>
-        <div class="event">
-          <strong>Feb 12</strong>
-          <div class="date">Online / Location TBD</div>
-          IRE Indigenous Student Workshop
-        </div>
-        <div class="event">
-          <strong>Feb 13</strong>
-          <div class="date">Online</div>
-          IRE Board of Directors Meeting - February 13, 2026
-        </div>
-        <div class="event">
-          <strong>Mar 5–8</strong>
-          <div class="date">Indianapolis, IN, US</div>
-          NICAR 2026 Conference
-        </div>
-        <div class="event">
-          <strong>Mar 23</strong>
-          <div class="date">Columbia, MO, US</div>
-          Data Journalism Bootcamp: Sheets + AI tools
-        </div>
-        <div class="event">
-          <strong>Jun 18–21</strong>
-          <div class="date">Oxon Hill, MD (National Harbor), US</div>
-          IRE 2026 Conference
-        </div>
+        <button class="slider-btn next" onclick="moveSlide('events', 1)">&#10095;</button>
       </div>
     </div>
   </section>
 
   <section id="training">
     <div class="container">
-      <h2>Training Opportunities</h2>
-      <p>Learn the latest techniques of finding, understanding and reporting on stories with IRE. Explore training options across the globe and find an event that fits your schedule, whether it’s in person or online.</p>
+      <h2>Advanced Training for Modern Investigators</h2>
+      <p class="intro">Equip yourself with state-of-the-art tools and methodologies to uncover stories that matter in an ever-evolving media landscape.</p>
+      <div class="training-blocks" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div class="block" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px var(--shadow); transition: transform 0.3s;">
+          <h3>Data-Driven Investigations</h3>
+          <p>Learn to harness AI, spreadsheets, and databases for powerful, evidence-based reporting.</p>
+        </div>
+        <div class="block" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px var(--shadow); transition: transform 0.3s;">
+          <h3>Global Collaboration Techniques</h3>
+          <p>Master cross-border storytelling and source-sharing in a connected world.</p>
+        </div>
+        <div class="block" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px var(--shadow); transition: transform 0.3s;">
+          <h3>Ethical Hacking for Journalists</h3>
+          <p>Ethical digital forensics and cybersecurity essentials for protecting sources and data.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="news">
     <div class="container">
-      <h2>IRE News</h2>
-      <div class="news-grid">
-        <div class="news-item">
-          <h3>The IRE team grows + promotions</h3>
-          <div class="date">February 2026</div>
-          <p>Help us welcome three new staff members: Benét Wilson (Training Director), Aaricka Washington (Marketing & Promotions), Krista Sporleder (Program Coordinator). Promotions: Adam Rhodes → Managing Editor IRE Journal, Lauren Grandestaff → Deputy Executive Director.</p>
+      <h2>Latest IRE News & Insights</h2>
+      <p class="intro">Stay updated with breakthroughs in investigative journalism, staff updates, and industry condemnations.</p>
+      <div class="slider" id="news-slider">
+        <button class="slider-btn prev" onclick="moveSlide('news', -1)">&#10094;</button>
+        <div class="slides">
+          <div class="slide news-item">
+            <h3>IRE Team Expands with Key Promotions</h3>
+            <div class="date">February 2026</div>
+            <p>Welcome new staff and celebrate promotions strengthening IRE's mission in journalism.</p>
+          </div>
+          <div class="slide news-item">
+            <h3>Upcoming Office Hours: NICAR Focus</h3>
+            <div class="date">February 2026</div>
+            <p>Engage with leaders on upcoming events and data journalism trends.</p>
+          </div>
+          <div class="slide news-item">
+            <h3>Board Meeting Agenda Released</h3>
+            <div class="date">February 13, 2026</div>
+            <p>Members invited to discuss strategic directions for investigative excellence.</p>
+          </div>
+          <div class="slide news-item">
+            <h3>2025 Philip Meyer Award Winners</h3>
+            <div class="date">February 3, 2026</div>
+            <p>Honoring innovative use of social sciences in groundbreaking journalism.</p>
+          </div>
+          <div class="slide news-item">
+            <h3>Staff Changes Bolster IRE</h3>
+            <div class="date">February 2, 2026</div>
+            <p>New roles and promotions amid critical times for the journalism industry.</p>
+          </div>
+          <div class="slide news-item">
+            <h3>IRE Condemns Journalist Arrests</h3>
+            <div class="date">January 30, 2026</div>
+            <p>Standing against suppression of press freedom in protest coverage.</p>
+          </div>
         </div>
-
-        <div class="news-item">
-          <h3>Join the next IRE President/Executive Director Office Hours</h3>
-          <div class="date">February 2026</div>
-          <p>Join President Josh Hinkle, Executive Director Diana Fuentes, and Training Director Laura Moscoso — Wednesday, February 11 at 1 p.m. ET. Talking about NICAR26 and upcoming events.</p>
-        </div>
-
-        <div class="news-item">
-          <h3>IRE Board of Directors Meeting</h3>
-          <div class="date">February 13, 2026</div>
-          <p>9:00am–11:00am CST. Open to current IRE members (registration required). Agenda available.</p>
-        </div>
-
-        <div class="news-item">
-          <h3>IRE announces winners of the 2025 Philip Meyer Journalism Award</h3>
-          <div class="date">February 3, 2026</div>
-          <p>Recognizes best use of social science methods in journalism. Five winning projects will be honored at NICAR 2026.</p>
-        </div>
-
-        <div class="news-item">
-          <h3>Promotions and new staff strengthen IRE</h3>
-          <div class="date">February 2, 2026</div>
-          <p>Staffing changes at IRE are strengthening the nation’s largest journalism association at a critical time for the industry.</p>
-        </div>
-
-        <div class="news-item">
-          <h3>IRE condemns the arrests of journalists Don Lemon and Georgia Fort</h3>
-          <div class="date">January 30, 2026</div>
-          <p>IRE strongly condemns the arrests of independent journalists who covered a protest in St. Paul, Minnesota.</p>
-        </div>
+        <button class="slider-btn next" onclick="moveSlide('news', 1)">&#10095;</button>
       </div>
     </div>
   </section>
 
   <section class="cta" id="join">
     <div class="container">
-      <h2>Join IRE Today</h2>
-      <p>There’s more pressure than ever to rise above the competition. IRE can help you enhance your daily reporting with resources and member benefits you won’t find anywhere else.</p>
-      <a href="https://www.ire.org/join-ire/" class="btn" target="_blank">Become a Member</a>
+      <h2>Join the Vanguard of Investigative Journalism</h2>
+      <p>In a world of misinformation, IRE empowers you with exclusive resources, global networks, and cutting-edge training to uncover the stories that shape tomorrow.</p>
+      <a href="https://www.ire.org/join-ire/" class="btn" target="_blank">Become a Member Today</a>
     </div>
   </section>
 
   <footer>
     <div class="container">
       <p>© 2026 Investigative Reporters and Editors (IRE). All rights reserved.</p>
-      <p>This is an unofficial single-page mirror / educational copy of https://www.ire.org/</p>
+      <p>This is an unofficial modernized single-page mirror for educational purposes. Original: <a href="https://www.ire.org/" style="color: #cbd5e1;">www.ire.org</a></p>
     </div>
   </footer>
 
+  <script>
+    // Simple Slider JavaScript
+    const sliders = {
+      events: { current: 0, id: 'events-slider' },
+      news: { current: 0, id: 'news-slider' }
+    };
+
+    function moveSlide(type, dir) {
+      const slider = sliders[type];
+      const slides = document.querySelector(`#${slider.id} .slides`);
+      const slideCount = slides.children.length;
+      slider.current = (slider.current + dir + slideCount) % slideCount;
+      slides.style.transform = `translateX(-${slider.current * 100}%)`;
+    }
+
+    // Initialize sliders to show 3 slides on desktop
+    document.querySelectorAll('.slides').forEach(slides => {
+      slides.style.width = `${slides.children.length * 100}%`;
+    });
+  </script>
 </body>
 </html>
