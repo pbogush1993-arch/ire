@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Investigative Reporters and Editors (IRE) — Home</title>
+  <style>
+    :root {
+      --primary: #003366;      /* тёмно-синий акцент */
+      --text: #333;
+      --light: #f8f9fa;
+      --gray: #666;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: #fff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1.5rem 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    nav {
+      background: #222;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1.2rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: var(--light);
+      padding: 4rem 0 3rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1.2rem;
+      color: var(--primary);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 900px;
+      margin: 0 auto 2rem;
+    }
+
+    section {
+      padding: 3rem 0;
+    }
+
+    section h2 {
+      font-size: 2.1rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .events-grid, .news-grid {
+      display: grid;
+      gap: 1.8rem;
+    }
+
+    .event, .news-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .event strong {
+      display: block;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+
+    .event .date {
+      color: var(--gray);
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .news-item h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .news-item .date {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .cta {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      margin: 2rem 0;
+    }
+
+    .cta h2 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: white;
+      color: var(--primary);
+      padding: 0.9rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.25s;
+    }
+
+    .btn:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .events-grid, .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      header h1 { font-size: 3rem; }
+      .hero h1  { font-size: 3.4rem; }
+    }
+
+    @media (min-width: 1024px) {
+      .events-grid, .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 0.8rem 0;
+      }
+
+      .hero {
+        padding: 3rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Investigative Reporters and Editors</h1>
+      <p>Supporting investigative journalism worldwide since 1975</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#events">Events</a>
+      <a href="#training">Training</a>
+      <a href="#news">News</a>
+      <a href="#join">Join IRE</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Welcome to IRE!</h1>
+      <p>Investigative Reporters and Editors Inc. is a grassroots nonprofit organization dedicated to improving the quality of investigative reporting.</p>
+      <p>IRE was formed to create a forum in which journalists throughout the world could help each other by sharing story ideas, newsgathering techniques and news sources.</p>
+      <p>IRE provides members access to thousands of reporting tipsheets and other materials through its Resource Center and hosts conferences and specialized training across the country. Programs of IRE include the National Institute for Computer-Assisted Reporting (NICAR), a collaboration between IRE and the Missouri School of Journalism.</p>
+    </div>
+  </section>
+
+  <section id="events">
+    <div class="container">
+      <h2>Upcoming events</h2>
+      <div class="events-grid">
+        <div class="event">
+          <strong>Feb 11</strong>
+          <div class="date">Online</div>
+          IRE President/Executive Director Office Hours: NICAR and other 2026 Events
+        </div>
+        <div class="event">
+          <strong>Feb 12</strong>
+          <div class="date">Online / Location TBD</div>
+          IRE Indigenous Student Workshop
+        </div>
+        <div class="event">
+          <strong>Feb 13</strong>
+          <div class="date">Online</div>
+          IRE Board of Directors Meeting - February 13, 2026
+        </div>
+        <div class="event">
+          <strong>Mar 5–8</strong>
+          <div class="date">Indianapolis, IN, US</div>
+          NICAR 2026 Conference
+        </div>
+        <div class="event">
+          <strong>Mar 23</strong>
+          <div class="date">Columbia, MO, US</div>
+          Data Journalism Bootcamp: Sheets + AI tools
+        </div>
+        <div class="event">
+          <strong>Jun 18–21</strong>
+          <div class="date">Oxon Hill, MD (National Harbor), US</div>
+          IRE 2026 Conference
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="training">
+    <div class="container">
+      <h2>Training Opportunities</h2>
+      <p>Learn the latest techniques of finding, understanding and reporting on stories with IRE. Explore training options across the globe and find an event that fits your schedule, whether it’s in person or online.</p>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="container">
+      <h2>IRE News</h2>
+      <div class="news-grid">
+        <div class="news-item">
+          <h3>The IRE team grows + promotions</h3>
+          <div class="date">February 2026</div>
+          <p>Help us welcome three new staff members: Benét Wilson (Training Director), Aaricka Washington (Marketing & Promotions), Krista Sporleder (Program Coordinator). Promotions: Adam Rhodes → Managing Editor IRE Journal, Lauren Grandestaff → Deputy Executive Director.</p>
+        </div>
+
+        <div class="news-item">
+          <h3>Join the next IRE President/Executive Director Office Hours</h3>
+          <div class="date">February 2026</div>
+          <p>Join President Josh Hinkle, Executive Director Diana Fuentes, and Training Director Laura Moscoso — Wednesday, February 11 at 1 p.m. ET. Talking about NICAR26 and upcoming events.</p>
+        </div>
+
+        <div class="news-item">
+          <h3>IRE Board of Directors Meeting</h3>
+          <div class="date">February 13, 2026</div>
+          <p>9:00am–11:00am CST. Open to current IRE members (registration required). Agenda available.</p>
+        </div>
+
+        <div class="news-item">
+          <h3>IRE announces winners of the 2025 Philip Meyer Journalism Award</h3>
+          <div class="date">February 3, 2026</div>
+          <p>Recognizes best use of social science methods in journalism. Five winning projects will be honored at NICAR 2026.</p>
+        </div>
+
+        <div class="news-item">
+          <h3>Promotions and new staff strengthen IRE</h3>
+          <div class="date">February 2, 2026</div>
+          <p>Staffing changes at IRE are strengthening the nation’s largest journalism association at a critical time for the industry.</p>
+        </div>
+
+        <div class="news-item">
+          <h3>IRE condemns the arrests of journalists Don Lemon and Georgia Fort</h3>
+          <div class="date">January 30, 2026</div>
+          <p>IRE strongly condemns the arrests of independent journalists who covered a protest in St. Paul, Minnesota.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="join">
+    <div class="container">
+      <h2>Join IRE Today</h2>
+      <p>There’s more pressure than ever to rise above the competition. IRE can help you enhance your daily reporting with resources and member benefits you won’t find anywhere else.</p>
+      <a href="https://www.ire.org/join-ire/" class="btn" target="_blank">Become a Member</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Investigative Reporters and Editors (IRE). All rights reserved.</p>
+      <p>This is an unofficial single-page mirror / educational copy of https://www.ire.org/</p>
+    </div>
+  </footer>
+
+</body>
+</html>
